@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>EXERCICE FOUR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body id="exercice4">
+    <div class="container-fluid">
+      <h1>EXERCICE 4 : INCROYABLEMENT INCROYABLE !</h1>
+      <form name="form1" action="" onsubmit="return validateForm()" method="post">
+        <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname"/><br>
+        <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname"/><br>
+        <label for="city">Ville : </label><input type="text" name="city" id="city"/><br><br>
+        <input type="submit" name="submit" id="submit" value="Valider"></input>
+      </form>
+    </div>
+    <script>
+      // $lastName="";
+      // $firstName="";
+      // $city="";
+      // $lastName2=prompt($lastName,"Votre Nom");
+      // $firstName2=prompt($firstName,"Votre Prénom");
+      // $city2=prompt($city,"Votre ville");
+      // alert('Votre Nom : '+$lastName2+'\nVotre Prénom : '+$firstName2+'\nVotre ville : '+$city2);
+      function validateForm() {
+        var lastName1 = document.forms["form1"]["lastname"].value;
+        var firstname1 = document.forms["form1"]["firstname"].value;
+        var city1 = document.forms["form1"]["city"].value;
+        var regex = /^[A-Za-z]+$/;
+        if (!regex.test(lastName1)||lastName1 == "") {
+          alert('Erreur Nom !');
+        }else if (!regex.test(firstname1)||firstname1 == "") {
+          alert('Erreur Prénom !');
+        }else if (!regex.test(city1)||city1 == "") {
+          alert('Erreur ville !');
+        }else{
+          alert('Votre Nom : '+lastName1+'\nVotre Prénom : '+firstname1+'\nVotre ville : '+city1);
+        };
+      }
+    </script>
+  </body>
+</html>
